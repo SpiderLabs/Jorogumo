@@ -5,4 +5,5 @@ Stored XSS SVG phishing tool with the ability to serve a malicious login page, o
 /
 ## Usage
 - `git clone https://github.com/johnjhacking/Jorogumo`
+- `pip3 install -r requirements.txt`
 
