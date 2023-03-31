@@ -1,6 +1,10 @@
 # Jorōgumo [ 絡新婦 ]
 A red team tool written in python for building SVG stored xss payloads, cloning webpages, or implementing custom javascript in pre-existing or cloned webpages.
 
+Author: johnjhacking
+
+ASCII: w0rmer
+
 ## Features
 ![da12503cb7e54226a8e9f8164a6c0694](https://user-images.githubusercontent.com/39013067/228970400-306a5a8f-bcb8-45e1-9227-943e643136db.png)
 ### Clone a webpage: 
